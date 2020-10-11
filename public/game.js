@@ -9,7 +9,7 @@ var clickBtn = document.getElementById("clickCake"),
 
 
 //used to buy upgrades
-//FIXME: currently does not validate with server
+//FIXME: server only subtracts 10 cakes no matter the ammount
 function buyUpgrade(ammount){
     socket.emit("upgrade",ammount)
 }
@@ -29,3 +29,8 @@ socket.on("cakeCountUpdate",function(data){
 socket.on("upgrade",function(data){
     document.getElementById("cps").innerHTML=data;
 })
+socket.on("test", function(data) {
+    //console.log("test")
+    window.location.href = data;
+    
+});

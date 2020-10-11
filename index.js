@@ -1,9 +1,11 @@
 var express = require("express")
 var socket = require("socket.io")
 
+const PORT=":4000"
+
 var app = express();
 var server = app.listen(4000,function(){
-    console.log("Server is up on http://"+getIp()+":4000")
+    console.log("Server is up on http://"+getIp()+PORT)
 });
 
 app.use(express.static("public"))
@@ -54,6 +56,12 @@ setInterval(function(){
         if(p.isActive){
             p.cakes+=(p.cakesPerSec)/10
             p.socket.emit("cakeCountUpdate",Math.floor(p.cakes))
+            if(p.cakes>99999999999){
+                dest="http://"+getIp()+PORT+"/SSByZWFsbHkgaG9wZSBub2JvZHkgZmluZHMgdGhpcywgdGhhdCB3b3VsZCBiZSBlbWJhcnJhc3Npbmcu/"
+                p.socket.emit("test", dest);
+                console.log("um")
+                p.isActive=false;
+            }
         }
     })
 }, 100);
