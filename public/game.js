@@ -29,8 +29,6 @@ socket.on("cakeCountUpdate",function(data){
 socket.on("upgrade",function(data){
     document.getElementById("cps").innerHTML=data;
 })
-socket.on("test", function(data) {
-    //console.log("test")
+socket.on("redirect", function(data) {
     window.location.href = data;
-    
 });

@@ -58,8 +58,8 @@ setInterval(function(){
             p.socket.emit("cakeCountUpdate",Math.floor(p.cakes))
             if(p.cakes>99999999999){
                 dest="http://"+getIp()+PORT+"/SSByZWFsbHkgaG9wZSBub2JvZHkgZmluZHMgdGhpcywgdGhhdCB3b3VsZCBiZSBlbWJhcnJhc3Npbmcu/"
-                p.socket.emit("test", dest);
-                console.log("um")
+                p.socket.emit("redirect", dest);
+                console.log("redirected")
                 p.isActive=false;
             }
         }
