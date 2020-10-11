@@ -19,7 +19,7 @@ class Player{
     }
 }
 var playerLookup=[]
-
+var clientId=0
 
 
 io.on("connection",function(socket){
