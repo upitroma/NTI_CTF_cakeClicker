@@ -41,7 +41,7 @@ io.on("connection",function(socket){
         playerLookup[socket.id].cakes++;
     })
     socket.on("upgrade",function(data){
-        if(playerLookup[socket.id].cakes>=10){
+        if(playerLookup[socket.id].cakes>=10 && Number.isInteger(data)){
             playerLookup[socket.id].cakes-=10;
             playerLookup[socket.id].cakesPerSec+=data;
             socket.emit("upgrade",playerLookup[socket.id].cakesPerSec)
