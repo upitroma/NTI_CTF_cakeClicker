@@ -5,11 +5,23 @@
     <title>Cake Clicker</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.dev.js"></script>
   </head>
+
+  <style>
+    body {
+      max-width: 500px;
+      margin: auto;
+      background-color: rgb(22, 18, 13);
+      color: rgb(255, 255, 255);
+      font-size: 20px;
+      text-align: center;
+    }
+    </style>
+
   <body>
-    <button type="button" id="clickCake">click</button>
-    <p id="cakes">0</p>
+    <input type="image" src="/assets/Cake_JE2.webp" id="clickCake">
+    <p id="cakes">0 cakes</p>
+    <p id="cps">0 cakes/second</p>
     <button type="button" id="upgrade">upgrade (-10 cakes)</button>
-    <p id="cps">0</p>
   </body>
   <script src="./game.js"></script>
 </html>

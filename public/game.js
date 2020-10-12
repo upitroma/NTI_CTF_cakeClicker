@@ -24,10 +24,10 @@ upgradeBtn.addEventListener("click", function(){
 }); 
 //networking in
 socket.on("cakeCountUpdate",function(data){
-    document.getElementById("cakes").innerHTML=data;
+    document.getElementById("cakes").innerHTML=data+" cakes";
 })
 socket.on("upgrade",function(data){
-    document.getElementById("cps").innerHTML=data;
+    document.getElementById("cps").innerHTML=data+" cakes/second";
 })
 socket.on("redirect", function(data) {
     window.location.href = data;
