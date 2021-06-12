@@ -20,7 +20,7 @@ clickBtn.addEventListener("click", function(){
     socket.emit("clickCake")
 }); 
 upgradeBtn.addEventListener("click", function(){
-    socket.emit("upgrade",1)
+    buyUpgrade(1)
 }); 
 //networking in
 socket.on("cakeCountUpdate",function(data){
