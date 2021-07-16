@@ -5,7 +5,7 @@ RUN apk update; apk upgrade; apk add nodejs npm;
 
 #copy file from repo
 COPY index.js package.json /root/
-COPY public/ /root/public/
+COPY public/. /root/public/
 
 #install npm packages
 RUN cd /root/; npm install;
